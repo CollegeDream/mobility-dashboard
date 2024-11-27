@@ -12,7 +12,7 @@ const Dashboard = () => {
     setLoading(true);
     setError(null);
     try {
-      await processData(); // Trigger processing
+      await processData();
       const dashboardData = await fetchDashboardData(); // Fetch updated data
       setData(dashboardData);
     } catch (err) {

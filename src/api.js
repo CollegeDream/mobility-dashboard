@@ -1,13 +1,13 @@
+const URL = "http://localhost:5000";
+
 export const fetchDashboardData = async () => {
-    const response = await fetch("http://localhost:5000/dashboard");
+    const response = await fetch(`${URL}/dashboard`);
     if (!response.ok) {
       throw new Error("Failed to fetch dashboard data");
     }
     return response.json();
   };
   
-
-const URL = "http://localhost:5000";
 
 export const ingestData = async (files) => {
   try {
@@ -23,7 +23,7 @@ export const ingestData = async (files) => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    return await response.json(); // Return the server's response
+    return await response.json(); 
   } catch (error) {
     console.error("Error during data ingestion:", error);
     throw error;
@@ -33,9 +33,9 @@ export const ingestData = async (files) => {
 export const processData = async () => {
   try {
     const response = await fetch(`${URL}/process`, {
-      method: "POST",
+      method: "GET",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
     });
     
