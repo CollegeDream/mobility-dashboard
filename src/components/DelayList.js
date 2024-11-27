@@ -3,7 +3,7 @@ import React from "react";
 const DelayList = ({ delays }) => {
   if (!delays.length) return <p>No delays reported.</p>;
 
-  return (
+  return ( // Output all delays caused by weather
     <ul>
       {delays.map((delay, index) => (
         <li key={index}>
