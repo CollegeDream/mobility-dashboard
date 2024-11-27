@@ -3,7 +3,7 @@ import React from "react";
 const VanList = ({ vans }) => {
   if (!vans.length) return <p>No van requirements reported.</p>;
 
-  return (
+  return (   // Output all van dispatchments
     <ul>
       {vans.map((van, index) => (
         <li key={index}>
